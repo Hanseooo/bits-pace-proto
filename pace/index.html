@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#10283a" />
+  <meta name="description" content="PACE brand concept for a proposed student computing organization." />
+  <title>PACE | Student Computing Brand Concept</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{--ink:#10283a;--ink-deep:#081b2a;--ink-alt:#153248;--ink-soft:#22455b;--sky:#78b5d4;--mint:#a6e1d3;--white:#f2f7f5;--paper:#e4f0ec;--paper-alt:#d3e4e2;--paper-ink:#17313d;--muted:#a6bdc8;--dark-rule:rgba(169,219,230,.2);--light-rule:rgba(27,72,84,.18);--display:'Space Grotesk',Arial,sans-serif;--mono:'DM Mono',monospace}
+    *,*:before,*:after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:85px}
+    body{margin:0;background:var(--ink-deep);color:var(--white);font-family:var(--display);-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}svg{display:block}h1,h2,h3,p{margin-top:0}h1,h2,h3{letter-spacing:-.065em}
+    ::selection{background:var(--mint);color:var(--ink-deep)}
+    .wrap{max-width:1440px;margin:auto;padding-inline:clamp(22px,5.5vw,82px)}
+    .mono{font:11px/1.5 var(--mono);letter-spacing:.075em;text-transform:uppercase}
+    .eyebrow{font:11px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:11px}
+    .eyebrow:before{content:'';width:23px;height:1px;background:var(--mint)}
+    .study-bar{background:#e4f0ec;color:#294c58;border-bottom:1px solid #bbd1d2}
+    .study-inner{min-height:38px;display:flex;justify-content:space-between;align-items:center;gap:15px}
+    .study-bar .mono{font-size:9px}.study-links{display:flex;gap:18px;align-items:center;font:10px var(--mono)}
+    .study-links a{opacity:.75;transition:opacity .2s}.study-links a:hover,.study-links [aria-current=page]{opacity:1;font-weight:500}
+    .header{position:sticky;top:0;z-index:30;background:rgba(8,27,42,.94);border-bottom:1px solid var(--dark-rule);backdrop-filter:blur(18px)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:24px}
+    .brand{display:flex;align-items:center;gap:9px;font-size:25px;font-weight:700;letter-spacing:-.075em}
+    .brand-icon{width:37px;height:37px;color:var(--mint)}.nav-links{display:flex;align-items:center;gap:31px;margin-left:auto}
+    .nav-links a{color:#b5cbd3;font-size:12px;font-weight:500}.nav-links a:hover{color:var(--mint)}
+    .nav-action{font:10px var(--mono);text-transform:uppercase;letter-spacing:.04em;border:1px solid #54748a;color:var(--white);padding:12px 14px;white-space:nowrap;transition:background .2s}
+    .nav-action:hover{background:#26455b}
+    .menu-toggle{display:none;align-items:center;justify-content:center;width:41px;height:41px;border:1px solid var(--dark-rule);background:none;color:var(--white);font-size:22px}
+    :is(a,button):focus-visible{outline:2px solid var(--mint);outline-offset:4px}
+    .hero{background:var(--ink-deep);position:relative;overflow:hidden}
+    .hero:before,.app-zone:before{content:'';position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(145,199,221,.07) 1px,transparent 1px),linear-gradient(rgba(145,199,221,.07) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(90deg,transparent,#000 50%,#000);pointer-events:none}
+    .hero-layout{min-height:680px;display:grid;grid-template-columns:1.05fr .95fr;gap:35px;align-items:center;position:relative;padding-top:64px;padding-bottom:68px}
+    .hero-copy{z-index:1}.hero-copy .eyebrow{color:var(--mint)}
+    .hero-title{font:700 clamp(105px,14.8vw,220px)/.76 var(--display);letter-spacing:-.115em;margin:50px 0 35px -8px;white-space:nowrap}
+    .hero-title span{color:var(--mint)}
+    .hero-head{font:600 clamp(29px,3.75vw,56px)/1.06 var(--display);max-width:580px;letter-spacing:-.067em;margin-bottom:20px}
+    .hero-head em{font-style:normal;color:var(--sky)}
+    .hero-desc{font-size:15px;line-height:1.78;color:#b1c8d1;max-width:475px;margin-bottom:32px}
+    .actions{display:flex;gap:9px;flex-wrap:wrap}
+    .btn{display:inline-flex;min-height:48px;align-items:center;justify-content:center;padding:0 20px;font-weight:700;font-size:12px;gap:18px;transition:transform .2s,background .2s}
+    .btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--mint);color:var(--ink-deep);border:1px solid var(--mint)}.btn-primary:hover{background:#c3f1e5}
+    .btn-ghost{border:1px solid #587889;color:var(--white);background:transparent}.btn-ghost:hover{background:#1a394d}
+    .visual-wrap{min-width:0}.visual{width:100%;max-width:544px;aspect-ratio:1/1;margin-left:auto;background:radial-gradient(circle at 56% 48%,#23506b 0%,#14354a 43%,#0a2030 83%);border:1px solid #3c657c;position:relative;overflow:hidden;isolation:isolate}
+    .visual:before{content:'';position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(164,223,224,.07) 1px,transparent 1px),linear-gradient(rgba(164,223,224,.07) 1px,transparent 1px);background-size:23px 23px}
+    .visual:after{content:'';position:absolute;inset:0;box-shadow:inset 0 0 80px #081b2aa8;pointer-events:none}
+    .visual-diag{width:76%;height:76%;position:absolute;left:12%;top:12%;color:var(--mint);filter:drop-shadow(0 0 22px #a6e1d333);animation:rise 7s ease-in-out infinite}
+    .measure{position:absolute;z-index:2;color:#c3dadd;font:10px var(--mono);letter-spacing:.05em}.measure.tl{top:18px;left:19px}.measure.tr{top:18px;right:19px}.measure.bl{bottom:19px;left:19px}.measure.br{bottom:19px;right:19px;color:var(--mint)}
+    .visual-arc{border:1px dashed #acd8d13c;border-radius:50%;position:absolute;inset:12%}.visual-arc.two{inset:24%;border-style:solid;opacity:.5}
+    .section{padding-block:105px}
+    .section-title{font-size:clamp(43px,5.5vw,79px);font-weight:600;line-height:1.03;letter-spacing:-.075em;margin:0;max-width:900px}
+    .section-title em{font-style:normal;color:var(--sky)}.section-intro{max-width:690px;font-size:16px;line-height:1.76;color:#afc5ce;margin:23px 0 0}
+    .pillars{margin-top:46px;border-top:1px solid var(--dark-rule)}
+    .pillar{display:grid;grid-template-columns:minmax(220px,.8fr) 1.2fr;align-items:baseline;gap:24px;padding:22px 0;border-bottom:1px solid var(--dark-rule)}
+    .pillar h3{font-size:24px;font-weight:600;margin:0}.pillar p{color:#b1c6d0;font-size:13px;line-height:1.7;margin:0}
+    .identity{background:var(--paper);color:var(--paper-ink)}
+    .identity.identity .section-title em{color:#4285a2}.identity .section-intro{color:#56717a}
+    .identity-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:12px;margin-top:47px}
+    .lockup-board{position:relative;overflow:hidden;background:#d4e6e5;min-height:345px;padding:27px 30px;display:flex;flex-direction:column;justify-content:space-between}
+    .lockup-board:before{content:'';position:absolute;inset:0;background-image:linear-gradient(90deg,#306d8112 1px,transparent 1px),linear-gradient(#306d8112 1px,transparent 1px);background-size:25px 25px}
+    .board-label{position:relative;z-index:2;font:10px var(--mono);text-transform:uppercase;color:#4c707b;letter-spacing:.06em}
+    .lockup{position:relative;display:flex;align-items:center;gap:15px;z-index:2;max-width:100%}
+    .lockup-icon{width:76px;height:76px;color:#18425b;flex-shrink:0}.lockup-name{font:700 clamp(74px,9vw,148px)/.81 var(--display);letter-spacing:-.11em;white-space:nowrap}
+    .lockup-sub{font:10px/1.6 var(--mono);letter-spacing:.02em;margin:11px 0 0}
+    .symbol-board{min-height:345px;position:relative;overflow:hidden;background:radial-gradient(circle,#26516a 0%,#10283a 68%);display:grid;place-items:center}
+    .symbol-board:before{content:'';width:300px;height:300px;border-radius:50%;border:1px solid #6e9fb04d;position:absolute}
+    .symbol-board:after{content:'';width:230px;height:230px;border-radius:50%;border:1px dashed #6e9fb04d;position:absolute}
+    .symbol-board .board-label{position:absolute;top:26px;left:27px;color:#b4d5df}.symbol-large{width:175px;height:175px;color:var(--mint);z-index:1}
+    .spec-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+    .spec-panel{background:#d4e6e5;min-height:266px;padding:28px}.spec-panel h3{font-size:21px;margin-bottom:23px}
+    .colors{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.color{min-width:0}.color-swatch{height:79px;border:1px solid #22495722}
+    .color strong{display:block;font-size:11px;margin-top:9px}.color code{font:10px var(--mono);color:#52727e;display:block;margin-top:5px}
+    .type-show{display:flex;gap:15px;justify-content:space-between;align-items:end}.type-show strong{font-size:85px;letter-spacing:-.115em;line-height:.85}.type-show span{font:10px/1.9 var(--mono);color:#547581}
+    .type-note{font-size:13px;line-height:1.6;color:#547581;max-width:470px;margin-top:28px;margin-bottom:0}
+    .language{margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .language-visual{background:#b9d6db;min-height:250px;padding:21px;display:grid;place-items:center;position:relative;overflow:hidden}
+    .language-visual:nth-child(2){background:#183a50}.language-visual .board-label{position:absolute;left:20px;top:20px}.language-visual:nth-child(2) .board-label{color:#bbd9db}
+    .trajectory{width:min(100%,420px);height:140px}.trajectory path{stroke-linecap:square;stroke-linejoin:miter}
+    .step-chips{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;padding:25px}.step-chips span{font:11px var(--mono);border:1px solid #96bcbb64;padding:12px;color:#d5eded}.step-chips span:nth-child(3){background:var(--mint);color:var(--ink);border-color:var(--mint)}
+    .app-zone{background:#10283a;position:relative;overflow:hidden}.app-zone .wrap{position:relative;z-index:1}.app-head{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:40px}.app-head .section-title{font-size:clamp(41px,5vw,70px)}
+    .tabs{display:flex;gap:6px;flex-wrap:wrap}.tab{padding:12px 14px;border:1px solid #507184;background:transparent;color:#c1d8e0;font:11px var(--mono);text-transform:uppercase;letter-spacing:.02em}.tab:hover{border-color:var(--mint)}.tab[aria-pressed=true]{background:var(--mint);color:var(--ink);border-color:var(--mint)}
+    .app-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:12px}.poster-wrap{min-height:575px;background:#1c4157;display:flex;align-items:center;justify-content:center;padding:clamp(13px,3vw,36px)}
+    .poster{background:#d2eae7;color:#102f41;position:relative;overflow:hidden;width:100%;max-width:405px;aspect-ratio:4/5;box-shadow:15px 19px 0 #08182440;padding:25px;display:flex;flex-direction:column;justify-content:space-between;transition:background .2s,color .2s}
+    .poster:before{content:'';position:absolute;inset:0;background-image:linear-gradient(90deg,#12344b18 1px,transparent 1px),linear-gradient(#12344b18 1px,transparent 1px);background-size:30px 30px}
+    .poster>*{position:relative;z-index:1}.poster-top{display:flex;align-items:flex-start;justify-content:space-between;gap:15px}.poster-brand{display:flex;align-items:center;gap:5px;font-weight:700;font-size:20px;letter-spacing:-.08em}.poster-brand svg{width:25px;height:25px}.poster-edition{font:9px/1.7 var(--mono);text-align:right}
+    .poster-body{margin:auto 0}.poster-tag{font:11px var(--mono);text-transform:uppercase;letter-spacing:.04em}.poster-title{font:700 clamp(65px,8.6vw,130px)/.82 var(--display);letter-spacing:-.105em;margin:20px 0}.poster-code{font:11px/1.65 var(--mono);color:#2d5968}
+    .poster-foot{border-top:1px solid #31596570;padding-top:14px;display:flex;justify-content:space-between;align-items:end;gap:14px;font:10px/1.65 var(--mono)}
+    .poster.hack{background:var(--sky)}.poster.talk{background:#edf7f3}.poster.talk .poster-title{font-size:clamp(60px,8vw,115px)}
+    .merch{display:grid;grid-template-rows:1.13fr .87fr;gap:12px}.shirt-board{position:relative;background:#cfe3e4;min-height:336px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .shirt-board:before{content:'';position:absolute;inset:0;background-image:radial-gradient(#21546924 1px,transparent 1px);background-size:14px 14px}
+    .shirt-image{position:relative;display:block;width:min(88%,430px);height:auto;box-shadow:0 16px 34px #07172232}
+    .merch-caption{position:absolute;top:20px;left:20px;font:10px var(--mono);color:#547984}
+    .direction-board{display:block;position:relative;width:min(100%,680px);margin:42px auto 0;background:#0c1721;box-shadow:0 18px 42px #07172230}
+    .direction-board img{display:block;width:100%;height:auto}
+    .direction-board-caption{position:absolute;right:14px;bottom:14px;padding:9px 12px;background:#0c1721dd;color:#e4f0ec;font:10px var(--mono);letter-spacing:.04em}
+    .merch-lower{background:#21465c;min-height:222px;padding:23px;display:flex;gap:20px;align-items:center;justify-content:space-around;overflow:hidden}
+    .member-pass{width:196px;max-width:65%;height:125px;background:#e3f2ed;color:#163c4e;transform:rotate(-8deg);padding:15px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:7px 14px 22px #07172255}
+    .member-pass .mini-top{display:flex;justify-content:space-between;align-items:center;font:10px var(--mono)}.member-pass strong{font-size:20px;line-height:1;letter-spacing:-.045em}.member-pass .mini-bottom{font:9px var(--mono);border-top:1px solid #8cb1b0;padding-top:7px}
+    .sticker{width:133px;height:133px;min-width:110px;border-radius:50%;transform:rotate(14deg);background:var(--mint);color:var(--ink);display:grid;place-items:center;box-shadow:0 14px 20px #05131a44}.sticker svg{width:82px;height:82px}
+    .app-note{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#a6c1c8;font-size:12px;margin-top:20px}
+    .community{background:#e4f0ec;color:var(--paper-ink);padding-block:99px;overflow:hidden}.community-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:35px}
+    .community.community .section-title em{color:#4285a2}.community p{font-size:15px;line-height:1.8;color:#55717b;max-width:585px;margin:24px 0 0}
+    .courses{display:flex;gap:7px;flex-wrap:wrap;margin-top:30px}.courses span{padding:11px 15px;border:1px solid #8daeb8;color:#25536a;font:11px var(--mono)}
+    .community-art{position:relative;display:grid;place-items:center;min-height:360px}.community-art:before,.community-art:after{content:'';position:absolute;aspect-ratio:1;border-radius:50%;border:1px solid #5f9bab60;width:min(91%,355px)}.community-art:after{width:min(66%,255px);border-style:dashed}
+    .community-art svg{width:180px;height:180px;color:#2f748e;position:relative;z-index:1}.float-dot{position:absolute;width:12px;height:12px;background:var(--sky)}.float-dot.one{left:18%;top:17%}.float-dot.two{right:14%;top:25%;background:#2b6a83}.float-dot.three{bottom:16%;right:23%;background:var(--mint)}
+    .footer{background:#071723;padding-block:32px;color:#b5cdd2}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:24px}.footer-note{text-align:right;font:10px/1.75 var(--mono);letter-spacing:.035em}.footer-note strong{color:var(--mint);font-weight:400}
+    @keyframes rise{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    @media(max-width:1100px){.nav-links{gap:15px}.hero-layout{min-height:620px}.hero-title{font-size:clamp(104px,14.1vw,173px)}.visual-wrap{min-width:0}.lockup-name{font-size:clamp(68px,10vw,125px)}.poster-title{font-size:clamp(62px,9vw,112px)}}
+    @media(max-width:850px){.nav-links{display:none;position:absolute;left:0;right:0;top:76px;background:var(--ink-deep);padding:25px;flex-direction:column;align-items:flex-start;gap:25px;border-bottom:1px solid var(--dark-rule)}.nav-links.open{display:flex}.menu-toggle{display:flex;margin-left:auto}.hero-layout{grid-template-columns:1fr;min-height:0;padding-block:73px 55px}.hero-title{font-size:clamp(100px,21vw,190px)}.visual{max-width:550px;aspect-ratio:1.15;margin:auto}.pillars{grid-template-columns:1fr}.pillar{grid-template-columns:1fr;gap:8px}.identity-grid,.app-grid,.community-grid{grid-template-columns:1fr}.lockup-board,.symbol-board{min-height:315px}.spec-row{grid-template-columns:1fr 1fr}.language{grid-template-columns:1fr 1fr}.app-head{flex-direction:column;align-items:flex-start}.poster-wrap{min-height:530px}.merch{grid-template-columns:1fr 1fr;grid-template-rows:1fr}.shirt-board,.merch-lower{min-height:280px}.member-pass{max-width:75%}.community-art{min-height:270px}}
+    @media(max-width:600px){.study-inner{flex-wrap:wrap;justify-content:center;padding-block:8px;gap:5px}.study-links{gap:14px}.study-bar .mono{font-size:9px}.nav-inner{min-height:68px}.nav-links{top:68px}.brand{font-size:23px}.nav-action{display:none}.hero-layout{padding-top:65px}.hero-title{font-size:clamp(85px,23vw,132px);margin:36px 0 29px -5px}.hero-head{font-size:clamp(35px,9vw,48px)}.hero-desc{font-size:14px}.visual{aspect-ratio:1}.section{padding-block:77px}.section-title{font-size:clamp(40px,10vw,55px)}.section-intro{font-size:14px}.pillars{margin-top:34px}.pillar h3{font-size:25px}.identity-grid{margin-top:35px}.lockup-board{min-height:270px;padding:20px}.lockup{gap:7px}.lockup-icon{width:45px;height:45px}.lockup-name{font-size:clamp(62px,16vw,94px)}.lockup-sub{font-size:9px}.symbol-board{min-height:270px}.spec-row,.language{grid-template-columns:1fr}.spec-panel{min-height:235px;padding:22px}.color-swatch{height:65px}.color strong{font-size:10px}.color code{font-size:9px}.app-head{margin-bottom:25px}.app-head .section-title{font-size:clamp(39px,10vw,54px)}.tabs{width:100%}.tab{flex:1;padding:11px 6px;font-size:9px}.poster-wrap{min-height:480px}.poster{padding:18px}.poster-title{font-size:clamp(69px,16vw,110px)}.poster.talk .poster-title{font-size:clamp(60px,14vw,95px)}.merch{grid-template-columns:1fr;grid-template-rows:auto}.shirt-board{min-height:300px}.merch-lower{min-height:220px}.community{padding-block:77px}.community-art{min-height:235px}.footer-inner{align-items:flex-start;flex-direction:column}.footer-note{text-align:left}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.visual-diag{animation:none}a,button{transition:none!important}}
+    @media print{.study-bar,.header,.tabs{display:none}.hero{print-color-adjust:exact}.poster,.lockup-board,.symbol-board{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+    <!-- Ascending modular path: deliberate steps, shared progress, future-facing arrow. -->
+    <symbol id="pace-mark" viewBox="0 0 180 180">
+      <path d="M14 141 H47 V116 H80 V89 H113 V61 H166" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
+      <path d="M149 44 L166 61 L149 78" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
+      <g fill="none" stroke="currentColor" stroke-width="4"><circle cx="47" cy="116" r="9"/><circle cx="80" cy="89" r="9"/><circle cx="113" cy="61" r="9"/></g>
+      <path d="M14 159 H47 M80 109 H109 M128 92 H164" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3 7" opacity=".6"/>
+    </symbol>
+  </defs></svg>
+  <div class="study-bar"><div class="wrap study-inner"><span class="mono">Student computing identity concept</span><nav class="study-links" aria-label="Switch brand direction"><a href="../">← Comparison</a><a href="./" aria-current="page">PACE</a><a href="../bits/">BITS ↗</a></nav></div></div>
+  <header class="header"><div class="wrap nav-inner"><a href="#top" class="brand" aria-label="PACE home"><svg class="brand-icon" viewBox="0 0 180 180" aria-hidden="true"><use href="#pace-mark"/></svg>PACE</a><nav class="nav-links" id="nav-links" aria-label="PACE sections"><a href="#philosophy">The idea</a><a href="#identity">Identity system</a><a href="#applications">In action</a><a href="#community">Our community</a></nav><a class="nav-action" href="../">Compare identities ↗</a><button class="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">☰</button></div></header>
+  <main id="top">
+    <section class="hero"><div class="wrap hero-layout"><div class="hero-copy"><span class="eyebrow">Programmers' Association for Computing Excellence</span><h1 class="hero-title">PACE<span>.</span></h1><h2 class="hero-head">Learn. Build.<br/><em>Advance.</em></h2><p class="hero-desc">A proposed student computing society for workshops, projects, and mentorship.</p><div class="actions"><a class="btn btn-primary" href="#identity">Explore the identity <span aria-hidden="true">↗</span></a><a class="btn btn-ghost" href="#applications">See it in action <span aria-hidden="true">↗</span></a></div></div><div class="visual-wrap"><div class="visual" role="img" aria-label="An ascending geometric pathway with three milestone nodes and a forward arrow on a technical blueprint grid"><div class="visual-arc"></div><div class="visual-arc two"></div><svg class="visual-diag" viewBox="0 0 180 180" aria-hidden="true"><use href="#pace-mark"/></svg></div></div></div></section>
+    <section class="section wrap" id="philosophy">
+      <h2 class="section-title">A society for<br/><em>steady progress.</em></h2>
+      <p class="section-intro">PACE helps students at every skill level grow through shared knowledge, practice, and challenges.</p>
+      <div class="pillars">
+        <article class="pillar"><h3>Learn with purpose.</h3><p>Workshops and talks that make new ideas easier to learn.</p></article>
+        <article class="pillar"><h3>Practice with peers.</h3><p>Coding sessions and team projects with peers.</p></article>
+        <article class="pillar"><h3>Advance together.</h3><p>Mentorship and competitions for every skill level.</p></article>
+      </div>
+    </section>
+    <section class="identity section" id="identity">
+      <div class="wrap">
+        <h2 class="section-title">Progress, made<br/><em>visible.</em></h2>
+        <p class="section-intro">An ascending path, milestone nodes, and cool technical colors make progress visible.</p>
+        <a class="direction-board" href="../assets/pace-blue-color.png" target="_blank" rel="noreferrer" aria-label="Open the full-resolution PACE identity board">
+          <img src="../assets/pace-blue-color.png" alt="PACE identity concepts showing marks, colors, type, and applications." loading="lazy" decoding="async">
+          <span class="direction-board-caption">View the PACE identity board</span>
+        </a>
+        <div class="identity-grid">
+          <div class="lockup-board">
+            <span class="board-label">Primary lockup / Light</span>
+            <div class="lockup"><svg class="lockup-icon" viewBox="0 0 180 180" aria-hidden="true"><use href="#pace-mark"/></svg><div><div class="lockup-name">PACE</div><div class="lockup-sub">PROGRAMMERS' ASSOCIATION<br/>FOR COMPUTING EXCELLENCE</div></div></div>
+          </div>
+          <div class="symbol-board"><span class="board-label">Symbol / Dark</span><svg class="symbol-large" viewBox="0 0 180 180" aria-label="PACE ascending-path symbol"><use href="#pace-mark"/></svg></div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-panel"><h3>Color palette</h3><div class="colors"><div class="color"><div class="color-swatch" style="background:#10283a"></div><strong>Midnight</strong><code>#10283A</code></div><div class="color"><div class="color-swatch" style="background:#78b5d4"></div><strong>Sky Blue</strong><code>#78B5D4</code></div><div class="color"><div class="color-swatch" style="background:#a6e1d3"></div><strong>Seafoam</strong><code>#A6E1D3</code></div><div class="color"><div class="color-swatch" style="background:#e4f0ec"></div><strong>Mist</strong><code>#E4F0EC</code></div></div></div>
+          <div class="spec-panel"><h3>Typography</h3><div class="type-show"><strong>Aa</strong><span>SPACE GROTESK<br/>DM MONO</span></div><p class="type-note">Geometric headlines pair with monospaced labels.</p></div>
+        </div>
+        <div class="language">
+          <div class="language-visual"><span class="board-label">Ascending path</span><svg class="trajectory" viewBox="0 0 420 140" role="img" aria-label="A path with four milestone nodes rising to the right"><path d="M12 122 H92 V99 H171 V78 H249 V51 H327 V21 H404" fill="none" stroke="#286681" stroke-width="5"/><path d="M389 6 L405 21 L389 36" fill="none" stroke="#286681" stroke-width="5"/><g stroke="#e3f6f1" stroke-width="3" fill="#286681"><circle cx="92" cy="99" r="7"/><circle cx="171" cy="78" r="7"/><circle cx="249" cy="51" r="7"/><circle cx="327" cy="21" r="7"/></g></svg></div>
+          <div class="language-visual"><span class="board-label">Learning path</span><div class="step-chips"><span>LEARN</span><span>PRACTICE</span><span>BUILD</span><span>ADVANCE</span></div></div>
+        </div>
+      </div>
+    </section>
+    <section class="section app-zone" id="applications"><div class="wrap"><div class="app-head"><h2 class="section-title">Labs, hackathons,<br/><em>and talks.</em></h2><div class="tabs" role="group" aria-label="Select event concept"><button type="button" class="tab" data-event="lab" aria-pressed="true">PACE / LABS</button><button type="button" class="tab" data-event="hack" aria-pressed="false">PACE / HACK</button><button type="button" class="tab" data-event="talk" aria-pressed="false">PACE / TALKS</button></div></div><div class="app-grid"><div class="poster-wrap"><div class="poster lab" id="event-poster" aria-live="polite"><div class="poster-top"><div class="poster-brand"><svg viewBox="0 0 180 180" aria-hidden="true"><use href="#pace-mark"/></svg>PACE</div><span class="poster-edition">COMPUTING SOCIETY<br/>CONCEPT EVENT</span></div><div class="poster-body"><div class="poster-tag" id="poster-tag">SKILL SERIES</div><h3 class="poster-title" id="poster-title">LABS.</h3><div class="poster-code" id="poster-description">learn();<br/>practice();<br/>advance();</div></div><div class="poster-foot"><span id="poster-footer">OPEN PROJECT WORKSHOPS</span><span>OPEN TO COMPUTING<br/>ENTHUSIASTS ↗</span></div></div></div><div class="merch"><div class="shirt-board"><span class="merch-caption">Member apparel / Concept</span><img class="shirt-image" src="../assets/pace-shirt-mockup.png" alt="Navy PACE T-shirt with the blue PACE mark." loading="lazy" decoding="async"></div><div class="merch-lower"><div class="member-pass"><div class="mini-top"><span>PACE / MEMBER</span></div><strong>PROGRESS<br/>IS A PRACTICE.</strong><div class="mini-bottom">LEARN → BUILD → ADVANCE</div></div><div class="sticker" aria-label="PACE symbol sticker"><svg viewBox="0 0 180 180" aria-hidden="true"><use href="#pace-mark"/></svg></div></div></div></div><div class="app-note"><span>Choose an event to preview the identity.</span><span class="mono">Concept artwork. Events are not scheduled.</span></div></div></section>
+    <section class="community" id="community"><div class="wrap community-grid"><div><h2 class="section-title">Keep learning.<br/><em>Grow with peers.</em></h2><p>PACE is a proposed student organization for programming and computing. Members can learn together, from a first line of code to a hackathon.</p><div class="courses"><span>BSIT</span><span>BSCS</span><span>BSCpE</span><span>BSIS</span><span>+ OTHER CURIOUS MINDS</span></div></div><div class="community-art" aria-hidden="true"><span class="float-dot one"></span><span class="float-dot two"></span><span class="float-dot three"></span><svg viewBox="0 0 180 180"><use href="#pace-mark"/></svg></div></div></section>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><a href="#top" class="brand"><svg class="brand-icon" viewBox="0 0 180 180" aria-hidden="true"><use href="#pace-mark"/></svg>PACE</a><div class="footer-note">STUDENT ORGANIZATION CONCEPT · 2026<br/>Concept identity. Not university-affiliated.</div></div></footer>
+  <script>
+    const events={
+      lab:{title:'LABS.',tag:'SKILL SERIES',description:'learn();<br>practice();<br>advance();',footer:'WORKSHOPS / PROJECTS / TALKS'},
+      hack:{title:'HACK.',tag:'BUILD CHALLENGE',description:'team_up();<br>solve();<br>ship();',footer:'TEAM PROJECTS'},
+      talk:{title:'TALKS.',tag:'KNOWLEDGE EXCHANGE',description:'listen();<br>question();<br>grow();',footer:'TALKS AND PEER MENTORSHIP'}
+    };
+    document.querySelectorAll('[data-event]').forEach(button=>button.addEventListener('click',()=>{
+      const key=button.dataset.event, event=events[key];if(!event)return;
+      document.querySelectorAll('[data-event]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+      document.getElementById('event-poster').className='poster '+key;
+      document.getElementById('poster-title').textContent=event.title;
+      document.getElementById('poster-tag').textContent=event.tag;
+      document.getElementById('poster-description').innerHTML=event.description;
+      document.getElementById('poster-footer').innerHTML=event.footer;
+    }));
+    const toggle=document.querySelector('.menu-toggle'), menu=document.getElementById('nav-links');
+    toggle.addEventListener('click',()=>{const open=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));});
+    menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.classList.remove('open');toggle.setAttribute('aria-expanded','false');}));
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'){menu.classList.remove('open');toggle.setAttribute('aria-expanded','false');}});
+  </script>
+</body>
+</html>

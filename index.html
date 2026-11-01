@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f5f0" />
+  <meta name="description" content="Two proposed identities for a student computing community: PACE and BITS." />
+  <title>PACE and BITS | Student Computing Identity Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --paper:#f5f5f0;--paper2:#ebece5;--ink:#192127;--muted:#6e7777;--rule:#d5d9d3;--pace:#10283a;--pace-light:#a6e1d3;--pace-blue:#78b5d4;--bits:#111b19;--bits-lime:#c9f68a;--bits-mint:#8de1b0; --mono:'DM Mono',ui-monospace,SFMono-Regular,Consolas,monospace;--display:'Space Grotesk','Arial',sans-serif;--body:'DM Sans','Arial',sans-serif;}
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:95px}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased}
+    button,a{-webkit-tap-highlight-color:transparent}
+    button{font:inherit;cursor:pointer}
+    a{color:inherit;text-decoration:none}
+    svg{display:block}
+    ::selection{background:#d5f3ca;color:#11281a}
+    .wrap{width:min(1500px,calc(100% - 92px));margin:0 auto}
+    .mono{font-family:var(--mono);font-weight:400;letter-spacing:.02em}
+    .eyebrow{font-family:var(--mono);font-size:10px;line-height:1.5;letter-spacing:.11em;text-transform:uppercase}
+    .muted{color:var(--muted)}
+    .site-header{position:sticky;top:0;z-index:40;background:rgba(245,245,240,.93);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-bottom:1px solid var(--rule)}
+    .nav{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:24px}
+    .brandstamp{display:flex;align-items:center;gap:11px;font-size:12px;font-weight:700;letter-spacing:-.02em;white-space:nowrap}
+    .brandstamp-mark{display:flex;align-items:center;justify-content:center;width:32px;height:32px;background:var(--ink);color:#fff;border-radius:7px;font:700 13px var(--display)}
+    .navlinks{display:flex;align-items:center;gap:32px;font-size:12px;font-weight:600}
+    .navlinks a{transition:opacity .2s}.navlinks a:hover{opacity:.5}
+    .navcta{display:flex;align-items:center;gap:12px;border:1px solid #cdd2cc;background:#fff;border-radius:100px;padding:10px 15px;font-size:12px;font-weight:700;white-space:nowrap;transition:transform .2s,background .2s}
+    .navcta:hover{background:#e8eee6;transform:translateY(-1px)}
+    .mobile-nav{display:none}
+    .hero{padding:93px 0 66px;display:grid;grid-template-columns:1.55fr .7fr;gap:55px;align-items:end}
+    .hero-tag{display:flex;align-items:center;gap:9px;color:#64706f;margin-bottom:24px}
+    h1,h2,h3,p{margin-top:0}
+    h1{font:600 clamp(49px,6.3vw,98px)/.99 var(--display);letter-spacing:-.083em;max-width:990px;margin-bottom:0}
+    h1 em{font-style:normal;color:#929b96}
+    .hero-desc{max-width:360px;font-size:15px;line-height:1.7;color:#5d6766;margin-bottom:5px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:23px}
+    .section-head .stack{display:flex;align-items:center;gap:10px}
+    .section-title{font:600 clamp(27px,3vw,41px)/1.1 var(--display);letter-spacing:-.05em;margin:0}
+    .section-sub{font-size:12px;color:#697371;line-height:1.55;margin:0;text-align:right;max-width:300px}
+    .identity-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .identity-card{position:relative;min-height:510px;overflow:hidden;border-radius:15px;color:white;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;padding:30px 32px 27px;border:1px solid rgba(255,255,255,.1)}
+    .identity-card.pace{background:var(--pace)}
+    .identity-card.bits{background:var(--bits)}
+    .identity-card::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(to right,rgba(255,255,255,.065) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.065) 1px,transparent 1px);background-size:30px 30px;mask-image:linear-gradient(to right,transparent 10%,#000 100%);opacity:.5}
+    .identity-card.pace::after{content:'';position:absolute;width:450px;height:450px;border-radius:50%;top:-230px;right:-90px;background:radial-gradient(circle,rgba(86,151,188,.3),transparent 64%);z-index:-1}
+    .identity-card.bits::after{content:'';position:absolute;width:500px;height:500px;border-radius:50%;top:-220px;right:-120px;background:radial-gradient(circle,rgba(132,205,102,.15),transparent 63%);z-index:-1}
+    .id-top{display:flex;justify-content:space-between;align-items:start;gap:15px}
+    .id-no{font-size:10px;opacity:.7}
+    .id-chip{border:1px solid rgba(255,255,255,.26);border-radius:100px;padding:7px 11px;font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:#e9f3ee}
+    .id-graphic{position:absolute;right:20px;top:83px;width:min(43%,280px);height:268px;display:flex;align-items:center;justify-content:center;pointer-events:none}
+    .pace .id-graphic{color:var(--pace-light)}
+    .bits .id-graphic{color:var(--bits-lime)}
+    .identity-svg{width:100%;max-height:260px;filter:drop-shadow(0 16px 36px rgba(0,0,0,.16))}
+    .pace-orbit{position:absolute;inset:18px;border:1px dashed rgba(153,211,210,.27);border-radius:50%;transform:scale(.96)}
+    .pace-orbit.two{inset:0;transform:scale(1.13);opacity:.38}
+    .bits .id-graphic{transform:rotate(-6deg);right:39px}
+    .id-content{position:relative;z-index:1;margin-top:auto}
+    .bits
+    .id-title{font:700 clamp(72px,9vw,138px)/.78 var(--display);letter-spacing:-.105em;margin:0 0 20px -7px}
+    .id-full{font-size:14px;font-weight:600;line-height:1.45;max-width:290px;margin-bottom:23px;color:#edf1ee}
+    .id-footer{padding-top:18px;border-top:1px solid rgba(255,255,255,.2);display:flex;align-items:end;justify-content:space-between;gap:20px}
+    .id-motto{font:500 clamp(16px,2vw,24px)/1.15 var(--display);letter-spacing:-.04em;max-width:260px}
+    .bits
+    .colorbar{display:grid;grid-template-columns:repeat(4,1fr);height:7px;overflow:hidden;border-radius:0 0 7px 7px;margin:0 6px}
+    .colorbar span{display:block}
+    .descriptor{display:flex;align-items:flex-start;justify-content:space-between;gap:25px;padding:12px 4px;color:#5d6867;font-size:12px;line-height:1.6}
+    .descriptor strong{font-weight:700;color:#28352f}
+    .details-section{padding:0 0 108px}
+    .brand-detail{display:grid;grid-template-columns:.63fr 1fr;gap:22px;border-top:1px solid var(--rule);padding:29px 0 34px}
+    .brand-detail:first-of-type{margin-top:24px}
+    .brand-detail-label{display:flex;align-items:flex-start;gap:12px}
+    .marker-mini{width:44px;height:44px;border-radius:9px;display:grid;place-items:center;flex-shrink:0}
+    .marker-mini.pace{background:#133147;color:#aff0dc}
+    .marker-mini.bits{background:#213529;color:#ddf994}
+    .marker-mini svg{width:24px;height:24px}
+    .brand-detail h3{font:600 26px/1 var(--display);letter-spacing:-.05em;margin:0 0 8px}
+    .brand-detail-label p{font:10px/1.5 var(--mono);text-transform:uppercase;color:#7c8982;letter-spacing:.05em;margin:0}
+    .detail-copy{font-size:14px;line-height:1.75;color:#66716c;max-width:750px;margin-bottom:22px}
+    .specimens{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+    .small-label{font:10px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#79847f;margin-bottom:11px}
+    .swatches{display:flex;gap:10px;flex-wrap:wrap}
+    .swatch{border:0;background:transparent;padding:0;text-align:left;min-width:72px;display:flex;flex-direction:column;gap:6px;align-items:start;color:#596661}
+    .swatch-square{display:block;width:78px;height:41px;border:1px solid rgba(25,33,39,.08);border-radius:6px;transition:transform .15s}
+    .swatch:hover .swatch-square{transform:translateY(-3px)}
+    .swatch code{font:10px var(--mono);color:#6a7471}
+    .eventsection{padding-bottom:97px}
+    .event-header{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:23px}
+    .event-controls{display:flex;background:#e8eae3;border:1px solid #d6dad3;padding:4px;border-radius:100px;gap:3px}
+    .event-control{font:600 11px var(--body);color:#67736e;border:0;background:transparent;border-radius:100px;padding:11px 15px;transition:.2s}
+    .event-control[aria-pressed="true"]{background:#fff;box-shadow:0 2px 9px rgba(0,0,0,.06);color:#1e2925}
+    .event-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .event-group{border:1px solid #d9ddd6;border-radius:14px;overflow:hidden;background:#fff;padding:14px}
+    .event-group-top{display:flex;justify-content:space-between;align-items:center;padding:4px 3px 14px}
+    .event-group-label{font-size:12px;font-weight:700}
+    .event-group-sub{font:10px var(--mono);color:#77827c}
+    .poster{height:510px;position:relative;overflow:hidden;padding:29px 30px 27px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;border-radius:7px}
+    .poster.pace{background:#11283a}
+    .poster.bits{background:#d9fa84;color:#1c2b22}
+    .poster.pace:before{content:"";position:absolute;inset:0;background-image:linear-gradient(to right,rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.07) 1px,transparent 1px);background-size:32px 32px;mask-image:linear-gradient(to bottom,transparent,#000 90%);pointer-events:none}
+    .poster.bits:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#253e2b 1px,transparent 1px);background-size:22px 22px;opacity:.14;pointer-events:none}
+    .poster-brand{position:relative;display:flex;align-items:center;justify-content:space-between;gap:14px;font:600 13px var(--display)}
+    .poster-brand .mono{font-size:10px;color:inherit;opacity:.68}
+    .poster-title{position:relative;font:700 clamp(49px,5.2vw,84px)/.86 var(--display);letter-spacing:-.09em;text-transform:uppercase;max-width:590px;overflow-wrap:anywhere;margin-top:70px}
+    .poster.bits .poster-title{max-width:530px}
+    .poster-sub{position:relative;margin-top:18px;font:500 14px/1.5 var(--body);max-width:315px;opacity:.83}
+    .poster-foot{position:relative;display:flex;align-items:end;justify-content:space-between;gap:10px;border-top:1px solid currentColor;padding-top:15px;font:11px/1.55 var(--mono);margin-top:auto}
+    .poster-foot span:last-child{text-align:right}
+    .poster-art{position:absolute;z-index:0;opacity:.95;pointer-events:none}
+    .poster.pace .poster-art{top:87px;right:-35px;width:320px;transform:rotate(-8deg);opacity:.45}
+    .poster.bits .poster-art{top:90px;right:23px;width:225px;color:#1c2b22;opacity:.13;transform:rotate(14deg)}
+    .event-mini-strip{display:grid;grid-template-columns:1.5fr 1fr;gap:10px;padding-top:12px}
+    .mini-ticket{height:110px;border-radius:7px;position:relative;padding:14px 16px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+    .mini-ticket.pace{background:#d8e9e5;color:#1d414e}
+    .mini-ticket.bits{background:#1c2a25;color:#c9f68a}
+    .mini-ticket .top{display:flex;align-items:center;justify-content:space-between;font:600 10px var(--mono)}
+    .mini-ticket .bottom{font:600 17px/1 var(--display);letter-spacing:-.04em}
+    .mini-ticket .ghost{position:absolute;right:8px;bottom:-17px;font:700 100px/.8 var(--display);opacity:.12}
+    .mini-sticker{height:110px;border-radius:7px;display:grid;place-items:center;position:relative;overflow:hidden}
+    .mini-sticker.pace{background:#a5ded0;color:#103143}
+    .mini-sticker.bits{background:#e9eee4;color:#1e3526}
+    .mini-sticker svg{width:75px;height:75px}
+    .comparison{padding-bottom:90px}
+    .comparison-board{background:#fff;border:1px solid #dadfd7;border-radius:14px;overflow:hidden}
+    .comparison-header{display:grid;grid-template-columns:210px 1fr 1fr;background:#f0f1eb;border-bottom:1px solid #dde1d9}
+    .comparison-header>*{padding:26px 28px}
+    .comparison-brand{font:700 34px/.95 var(--display);letter-spacing:-.065em}
+    .comparison-brand span{display:block;font:11px/1.4 var(--mono);color:#768078;letter-spacing:0;margin-top:9px}
+    .compare-row{display:grid;grid-template-columns:210px 1fr 1fr;border-bottom:1px solid #e7eae4}
+    .compare-row:last-child{border-bottom:0}
+    .compare-row > *{padding:23px 28px}
+    .compare-label{font:11px/1.5 var(--mono);color:#7c8982;text-transform:uppercase;letter-spacing:.02em}
+    .compare-value{font-size:14px;line-height:1.6;color:#42504a;border-left:1px solid #eef0ec}
+    .compare-value strong{font-weight:700;color:#202d26}
+    .comparison-footer{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+    .decision{padding:25px 27px;border-radius:12px;border:1px solid #dce0da;background:#ecefe9}
+    .decision .mono{font-size:10px;color:#65746b;text-transform:uppercase}
+    .decision h3{font:600 25px/1.15 var(--display);letter-spacing:-.05em;margin:13px 0 10px}
+    
+    .closing{padding:42px 0 70px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:end;gap:25px}
+    .closing h2{font:600 clamp(27px,3.6vw,51px)/1.03 var(--display);letter-spacing:-.07em;max-width:540px;margin:12px 0 0}
+    .closing p{max-width:330px;font-size:13px;line-height:1.6;color:#6e7973;margin:0}
+    .toast{position:fixed;z-index:80;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;background:#142722;color:#e8f3eb;padding:13px 19px;border-radius:100px;font:12px var(--body);box-shadow:0 8px 25px #0002}
+    .toast.active{transform:translate(-50%,0);opacity:1}
+    .no-jump{white-space:nowrap}
+    @media (max-width:1100px){.wrap{width:min(100% - 56px,1500px)}.identity-card{min-height:465px}.id-graphic{width:46%;right:12px;top:83px}.id-title{font-size:clamp(70px,10vw,116px)}.poster{height:470px}.comparison-header{grid-template-columns:150px 1fr 1fr}.compare-row{grid-template-columns:150px 1fr 1fr}.compare-row>* ,.comparison-header>*{padding:20px 17px}.brand-detail{grid-template-columns:.55fr 1fr}.swatch-square{width:66px}}
+    @media (max-width:760px){html{scroll-padding-top:75px}.wrap{width:min(100% - 32px,1500px)}.nav{min-height:62px}.navlinks{display:none}.brandstamp{font-size:11px}.navcta{font-size:11px;padding:9px 12px}.hero{padding:62px 0 48px;grid-template-columns:1fr;gap:20px}.hero-desc{max-width:570px}.hero-tag{margin-bottom:20px}.hero h1{font-size:clamp(47px,12vw,75px)}.section-head{align-items:flex-start}.section-sub{text-align:left}.identity-grid,.event-grid,.comparison-footer{grid-template-columns:1fr}.identity-card{min-height:495px}.id-title{font-size:clamp(90px,16vw,140px)}.id-graphic{right:35px;max-width:270px;top:68px}.descriptor{border-bottom:1px solid var(--rule);padding:15px 3px}.details-section{padding-bottom:70px}.brand-detail{grid-template-columns:1fr;gap:21px}.brand-detail-label{align-items:center}.specimens{gap:20px}.eventsection{padding-bottom:73px}.poster{height:470px}.poster-title{font-size:clamp(62px,11vw,92px)}.comparison{padding-bottom:70px}.comparison-header,.compare-row{grid-template-columns:100px 1fr 1fr}.comparison-header>* ,.compare-row>*{padding:15px 12px}.comparison-brand{font-size:24px}.comparison-brand span{font-size:9px}.compare-value{font-size:12px}.compare-label{font-size:9px}.closing{flex-direction:column;align-items:start}.closing p{max-width:540px}}
+    @media (max-width:530px){.navcta .long{display:none}.section-head{flex-direction:column;align-items:start;gap:10px}.section-sub{max-width:none}.identity-card{min-height:465px;padding:24px}.id-graphic{width:43%;right:17px;top:35px;height:219px}.bits .id-graphic{right:24px;top:48px}.id-title{font-size:90px;margin-left:-5px}.id-full{font-size:13px}.id-footer{align-items:end}.id-motto{font-size:19px}.specimens{grid-template-columns:1fr}.swatches{gap:9px}.event-header{flex-direction:column;align-items:start}.event-controls{width:100%}.event-control{flex:1;padding:10px 8px}.poster{height:425px;padding:23px}.poster-title{font-size:clamp(57px,13vw,76px)}.poster-sub{font-size:12px}.poster.pace .poster-art{width:260px}.poster.bits .poster-art{width:170px}.comparison-header,.compare-row{grid-template-columns:79px minmax(0,1fr) minmax(0,1fr)}.comparison-header>* ,.compare-row>*{padding:13px 10px}.comparison-brand{font-size:20px}.comparison-brand span{font-size:8px}.compare-label{font-size:9px;overflow-wrap:anywhere}.compare-value{font-size:11px;line-height:1.5;overflow-wrap:anywhere}.decision{padding:22px}.closing h2{font-size:37px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+    @media print{.site-header,.event-controls,.toast{display:none!important}.wrap{width:100%}.identity-grid,.event-grid,.comparison-footer{grid-template-columns:1fr 1fr}.identity-card,.poster{print-color-adjust:exact;-webkit-print-color-adjust:exact}.identity-card{min-height:420px}.hero{padding-top:22px}.details-section{padding-bottom:25px}}
+
+    /* Connected full-page brand directions. */
+    .directions{padding:4px 0 100px}.directions-intro{color:#66746e;font-size:14px;max-width:660px;line-height:1.7;margin:9px 0 27px}
+    .direction-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .direction{display:flex;flex-direction:column;min-width:0;border:1px solid #d7dfd8;background:#fff;border-radius:14px;overflow:hidden;transition:transform .2s,border-color .2s}
+    .direction:hover{transform:translateY(-3px);border-color:#9dada4}
+    .direction-preview{height:280px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .direction-preview.pace{background:radial-gradient(circle at 53% 42%,#24516e,#10283a 67%);color:#a6e1d3}
+    .direction-preview.bits{background:radial-gradient(circle at 53% 42%,#314b37,#111b19 67%);color:#c9f68a}
+    .direction-preview:before{content:'';inset:0;position:absolute;background-image:linear-gradient(#ffffff10 1px,transparent 1px),linear-gradient(90deg,#ffffff10 1px,transparent 1px);background-size:25px 25px}
+    .direction-preview svg{position:relative;width:190px;height:190px;filter:drop-shadow(0 12px 35px #0005)}
+    .direction-preview.bits svg{height:175px;width:150px}
+    .preview-meta{position:absolute;bottom:19px;left:23px;color:#f1f5ef;font:10px var(--mono);opacity:.8}
+    .preview-index{position:absolute;top:18px;right:23px;color:#f1f5ef;font:10px var(--mono);opacity:.7}
+    .direction-copy{padding:25px 26px 24px;display:flex;gap:15px;flex-direction:column;flex:1}
+    .direction-title{display:flex;justify-content:space-between;gap:15px;align-items:center;font:700 33px/1 var(--display);letter-spacing:-.065em}
+    .direction-title span{font:10px var(--mono);letter-spacing:0;color:#64716b}
+    .direction-copy p{color:#5b6a63;font-size:13px;line-height:1.7;margin:0;max-width:550px;flex:1}
+    .direction-link{display:flex;align-items:center;justify-content:space-between;gap:15px;border-top:1px solid #e1e7e0;padding-top:17px;margin-top:8px;font-weight:700;font-size:13px}
+    .direction-link span{font-size:20px;font-weight:400}
+    .direction a:focus-visible{outline:2px solid #94baad;outline-offset:4px}
+    @media(max-width:760px){.direction-grid{grid-template-columns:1fr}.directions{padding-bottom:72px}.direction-preview{height:230px}}
+  </style>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
+    <defs>
+      <symbol id="pace-mark" viewBox="0 0 180 180">
+        <path d="M14 141 H47 V116 H80 V89 H113 V61 H166" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
+        <path d="M149 44 L166 61 L149 78" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
+        <g fill="none" stroke="currentColor" stroke-width="4"><circle cx="47" cy="116" r="9"/><circle cx="80" cy="89" r="9"/><circle cx="113" cy="61" r="9"/></g>
+        <path d="M14 159 H47 M80 109 H109 M128 92 H164" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3 7" opacity=".6"/>
+      </symbol>
+      <symbol id="bits-mark" viewBox="0 0 100 140">
+        <path fill="currentColor" d="M0 0h80v20H0zM0 20h20v40H0zM80 20h20v40H80zM0 60h80v20H0zM0 80h20v40H0zM80 80h20v40H80zM0 120h80v20H0z" />
+      </symbol>
+    </defs>
+  </svg>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a href="#top" class="brandstamp"><span class="brandstamp-mark">P/B</span> <span>BRAND STUDY</span></a>
+      <div class="navlinks"><a href="#identities">Two identities</a><a href="#design-system">Design language</a><a href="#applications">Applications</a><a href="#comparison">Comparison</a><a href="#directions">Prototypes</a></div>
+      <a class="navcta" href="#directions"><span class="long">Explore directions</span><span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main id="top">
+    <div class="wrap">
+      <section class="hero">
+        <div>
+          <div class="eyebrow hero-tag">Two proposed identities for a student computing community</div>
+          <h1>Two directions.<br/><em>One student community.</em></h1>
+        </div>
+        <p class="hero-desc"><strong>PACE</strong> is built around progress. <strong>BITS</strong> is built around making.</p>
+      </section>
+
+      <section id="identities" aria-labelledby="identity-title">
+        <div class="section-head">
+          <div class="stack"><h2 class="section-title" id="identity-title">Two identities</h2></div>
+          <p class="section-sub">PACE and BITS, side by side.</p>
+        </div>
+        <div class="identity-grid">
+          <article class="identity-card pace" aria-label="PACE identity">
+            <div class="id-top"><span class="id-chip mono">Progress system</span></div>
+            <div class="id-graphic"><span class="pace-orbit"></span><span class="pace-orbit two"></span><svg class="identity-svg" viewBox="0 0 180 180" aria-hidden="true"><use href="#pace-mark"/></svg></div>
+            <div class="id-content">
+              <h3 class="id-title">PACE<span style="color:#a3dfd0">.</span></h3>
+              <p class="id-full">Programmers' Association for<br/>Computing Excellence</p>
+              <div class="id-footer"></div>
+            </div>
+          </article>
+          <article class="identity-card bits" aria-label="BITS identity">
+            <div class="id-top"><span class="id-chip mono">Builder culture</span></div>
+            <div class="id-graphic"><svg class="identity-svg" viewBox="0 0 100 140" aria-hidden="true"><use href="#bits-mark"/></svg></div>
+            <div class="id-content">
+              <h3 class="id-title">BITS<span style="color:#c9f68a">.</span></h3>
+              <p class="id-full">Builders in Technology<br/>and Software</p>
+              <div class="id-footer"></div>
+            </div>
+          </article>
+        </div>
+        <div class="identity-grid" aria-hidden="true" style="gap:16px">
+          <div class="colorbar"><span style="background:#10283a"></span><span style="background:#78b5d4"></span><span style="background:#a6e1d3"></span><span style="background:#e4f0ec"></span></div>
+          <div class="colorbar"><span style="background:#111b19"></span><span style="background:#8de1b0"></span><span style="background:#c9f68a"></span><span style="background:#e9eee4"></span></div>
+        </div>
+      </section>
+
+      <section class="details-section" id="design-system" aria-labelledby="systems-title">
+        <div class="section-head"><div class="stack"><h2 class="section-title" id="systems-title">Design language</h2></div><p class="section-sub">Marks, colors, and type for each identity.</p></div>
+        <article class="brand-detail">
+          <div class="brand-detail-label"><div class="marker-mini pace"><svg viewBox="0 0 180 180" aria-hidden="true"><use href="#pace-mark"/></svg></div><div><h3>PACE</h3><p>The ascending path</p></div></div>
+          <div>
+            <p class="detail-copy">An ascending path marks progress through skills and milestones. Cool colors and structured grids give PACE an academic feel.</p>
+            <div class="specimens">
+              <div><div class="small-label">Color palette <span style="opacity:.55">/ tap to copy</span></div><div class="swatches"><button class="swatch" data-color="#10283A" title="Copy #10283A"><span class="swatch-square" style="background:#10283a"></span><code>#10283A</code></button><button class="swatch" data-color="#78B5D4" title="Copy #78B5D4"><span class="swatch-square" style="background:#78b5d4"></span><code>#78B5D4</code></button><button class="swatch" data-color="#A6E1D3" title="Copy #A6E1D3"><span class="swatch-square" style="background:#a6e1d3"></span><code>#A6E1D3</code></button><button class="swatch" data-color="#E4F0EC" title="Copy #E4F0EC"><span class="swatch-square" style="background:#e4f0ec"></span><code>#E4F0EC</code></button></div></div>
+              <div><div class="small-label">Typography / Space Grotesk + DM Mono</div><div class="type-demo">Aa</div></div>
+            </div>
+          </div>
+        </article>
+        <article class="brand-detail">
+          <div class="brand-detail-label"><div class="marker-mini bits"><svg viewBox="0 0 100 140" aria-hidden="true"><use href="#bits-mark"/></svg></div><div><h3>BITS</h3><p>The pixel-built mark</p></div></div>
+          <div>
+            <p class="detail-copy">A pixel-built B and lime accents give BITS a practical, maker-focused identity.</p>
+            <div class="specimens">
+              <div><div class="small-label">Color palette <span style="opacity:.55">/ tap to copy</span></div><div class="swatches"><button class="swatch" data-color="#17251D" title="Copy #17251D"><span class="swatch-square" style="background:#111b19"></span><code>#17251D</code></button><button class="swatch" data-color="#8BCEB1" title="Copy #8BCEB1"><span class="swatch-square" style="background:#8de1b0"></span><code>#8BCEB1</code></button><button class="swatch" data-color="#DBFB87" title="Copy #DBFB87"><span class="swatch-square" style="background:#c9f68a"></span><code>#DBFB87</code></button><button class="swatch" data-color="#EEF5D5" title="Copy #EEF5D5"><span class="swatch-square" style="background:#e9eee4"></span><code>#EEF5D5</code></button></div></div>
+              <div><div class="small-label">Typography / Space Grotesk + DM Mono</div><div class="type-demo">Aa</div></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="applications" class="eventsection" aria-labelledby="applications-title">
+        <div class="event-header">
+          <div><div class="stack" style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><span class="eyebrow muted"></span></div><h2 class="section-title" id="applications-title">Event concepts</h2><p style="font-size:13px;color:#78817c;line-height:1.5;margin:9px 0 0">Choose an event to preview both identities.</p></div>
+          <div class="event-controls" role="group" aria-label="Preview event type"><button class="event-control" data-event="workshop" aria-pressed="true">Workshop</button><button class="event-control" data-event="hackathon" aria-pressed="false">Hackathon</button><button class="event-control" data-event="talk" aria-pressed="false">Tech talk</button></div>
+        </div>
+        <div class="event-grid">
+          <article class="event-group" aria-label="PACE event branding">
+            <div class="event-group-top"><span class="event-group-label">PACE / Event system</span><span class="event-group-sub">CONCEPT POSTER · </span></div>
+            <div class="poster pace">
+              <svg class="poster-art" viewBox="0 0 180 180" aria-hidden="true"><use href="#pace-mark"/></svg>
+              <div class="poster-brand"><span>PACE<span style="color:#a6e1d3">.</span> <span style="opacity:.55;font-size:11px">/ LABS</span></span><span class="mono" data-p-tag>WORKSHOP</span></div>
+              <div><div class="poster-title" data-p-title>BUILD<br/>YOUR<br/>NEXT STEP.</div><p class="poster-sub" data-p-desc>A hands-on workshop in programming and project building.</p></div>
+              <div class="poster-foot"><span data-p-foot>LEARN / PRACTICE / ADVANCE</span><span>OPEN TO ALL<br/>COMPUTING ENTHUSIASTS ↗</span></div>
+            </div>
+            <div class="event-mini-strip"><div class="mini-ticket pace"><div class="top"><span>PACE / MEMBER</span></div><span class="ghost">P</span></div><div class="mini-sticker pace"><svg viewBox="0 0 180 180" aria-label="PACE emblem"><use href="#pace-mark"/></svg></div></div>
+          </article>
+          <article class="event-group" aria-label="BITS event branding">
+            <div class="event-group-top"><span class="event-group-label">BITS / Event system</span><span class="event-group-sub">CONCEPT POSTER · </span></div>
+            <div class="poster bits">
+              <svg class="poster-art" viewBox="0 0 100 140" aria-hidden="true"><use href="#bits-mark"/></svg>
+              <div class="poster-brand"><span>BITS. <span style="opacity:.65;font-size:11px">/ BUILD</span></span><span class="mono" data-b-tag>WORKSHOP</span></div>
+              <div><div class="poster-title" data-b-title>BUILD<br/>A SMALL<br/>PROJECT.</div><p class="poster-sub" data-b-desc>Build a small working project with other students.</p></div>
+              <div class="poster-foot"><span data-b-foot>MAKE / TEST / REPEAT</span><span>START WITH THE BASICS ↗</span></div>
+            </div>
+            <div class="event-mini-strip"><div class="mini-ticket bits"><div class="top"><span>BITS / BUILDER PASS</span></div><span class="ghost">B</span></div><div class="mini-sticker bits"><svg viewBox="0 0 100 140" aria-label="BITS emblem"><use href="#bits-mark"/></svg></div></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="comparison" class="comparison" aria-labelledby="comparison-title">
+        <div class="section-head"><div class="stack"><h2 class="section-title" id="comparison-title">Compare the concepts</h2></div><p class="section-sub">Choose the identity that fits the community you want to build.</p></div>
+        <div class="comparison-board">
+          <div class="comparison-header"><div class="eyebrow muted" style="align-self:center">DESIGN CRITERIA</div><div class="comparison-brand">PACE<span>Progress-led identity</span></div><div class="comparison-brand">BITS<span>Builder-led identity</span></div></div>
+          <div class="compare-row"><div class="compare-label">Core idea</div><div class="compare-value"><strong>Growth through learning and achievement.</strong> Every step builds toward technical excellence.</div><div class="compare-value"><strong>Creativity through making.</strong> Small ideas turn into useful tools and shared projects.</div></div>
+          <div class="compare-row"><div class="compare-label">Personality</div><div class="compare-value">Focused, structured, aspirational, academic.</div><div class="compare-value">Curious, playful, practical, experimental.</div></div>
+          <div class="compare-row"><div class="compare-label">Name clarity</div><div class="compare-value">Names programmers and computing excellence.</div><div class="compare-value">Names technology and software builders.</div></div>
+          <div class="compare-row"><div class="compare-label">Strongest use cases</div><div class="compare-value">Workshops, competitions, mentorship, and academic partnerships.</div><div class="compare-value">Hackathons, team projects, open source, and creative coding.</div></div>
+          <div class="compare-row"><div class="compare-label">Cross-course reach</div><div class="compare-value">Open to students interested in programming and computing.</div><div class="compare-value">Welcomes makers from many courses. Software remains the focus.</div></div>
+          <div class="compare-row"><div class="compare-label">Potential weakness</div><div class="compare-value">May feel formal to beginners without welcoming community messaging.</div><div class="compare-value">May feel informal unless communications show its academic and technical scope.</div></div>
+          <div class="compare-row"><div class="compare-label">Brand system</div><div class="compare-value">Ascending paths, structured grids, cool hues, restrained editorial typography.</div><div class="compare-value">Pixel-built symbols, bold contrasts, modular blocks, expressive typographic layouts.</div></div>
+        </div>
+        <div class="comparison-footer">
+          <div class="decision"><div class="mono">Choose PACE if...</div><h3>A formal, progress-led computing society.</h3></div>
+          <div class="decision"><div class="mono">Choose BITS if...</div><h3>A builder community centered on projects.</h3></div>
+        </div>
+      </section>
+
+      <section id="directions" class="directions" aria-labelledby="directions-title">
+        <div class="section-head"><div class="stack"><h2 class="section-title" id="directions-title">View the full prototypes</h2></div><p class="section-sub">Open either prototype for the full identity and applications.</p></div>
+        <p class="directions-intro">Each prototype includes its identity, event and merch concepts. BITS also has three color themes.</p>
+        <div class="direction-grid">
+          <a class="direction" href="pace/" aria-label="Explore PACE complete brand direction">
+            <div class="direction-preview pace"><svg viewBox="0 0 180 180" aria-hidden="true"><use href="#pace-mark"/></svg><span class="preview-meta">STRUCTURED PROGRESS / EXCELLENCE</span></div>
+            <div class="direction-copy"><div class="direction-title">PACE <span>BLUE + MINT</span></div><p>See the PACE identity, palette, principles, and event concepts.</p><div class="direction-link">Open PACE brand prototype <span aria-hidden="true">↗</span></div></div>
+          </a>
+          <a class="direction" href="bits/" aria-label="Explore BITS complete brand direction">
+            <div class="direction-preview bits"><svg viewBox="0 0 100 140" aria-hidden="true"><use href="#bits-mark"/></svg><span class="preview-meta">MODULAR CREATION / BUILDERS</span></div>
+            <div class="direction-copy"><div class="direction-title">BITS <span>GREEN / BLUE / RED</span></div><p>See the BITS identity, applications, merch, and three color themes.</p><div class="direction-link">Open BITS brand prototype <span aria-hidden="true">↗</span></div></div>
+          </a>
+        </div>
+      </section>
+      <footer class="closing"><div><span class="eyebrow muted">Brand concept</span><h2>Next, get student feedback.</h2></div><p>These concepts are not university-affiliated. Check names and artwork before adoption. Events and passes are fictional.</p></footer>
+    </div>
+  </main>
+  <div role="status" aria-live="polite" class="toast" id="toast">Copied</div>
+  <script>
+    (() => {
+      const events = {
+        workshop: {pace: {tag:'WORKSHOP', title:'START WITH<br>THE BASICS.', desc:'A hands-on workshop in programming and project building.', foot:'WORKSHOPS / PROJECTS / TALKS'}, bits:{tag:'WORKSHOP',title:'BUILD<br>A SMALL<br>PROJECT.',desc:'Build a small working project with other students.',foot:'WORKSHOPS / PROJECTS / TALKS'}},
+        hackathon: {pace:{tag:'HACKATHON',title:'CODE.<br>TEST.<br>SHARE.',desc:'Work in teams to solve a problem and build a project.',foot:'WORKSHOPS / PROJECTS / TALKS'},bits:{tag:'HACKATHON',title:'BUILD<br>A<br>PROJECT.',desc:'Bring different skills together to build a project.',foot:'WORKSHOPS / PROJECTS / TALKS'}},
+        talk:{pace:{tag:'TECH TALK',title:'TOOLS FOR<br>THE NEXT<br>PROJECT.',desc:'Hear from people working across computing.',foot:'WORKSHOPS / PROJECTS / TALKS'},bits:{tag:'TECH TALK',title:'TECH<br>IN<br>PRACTICE.',desc:'Conversations about building, learning, and starting again.',foot:'WORKSHOPS / PROJECTS / TALKS'}}
+      };
+      const set = (selector, content) => { const node=document.querySelector(selector); if(node) node.innerHTML=content; };
+      document.querySelectorAll('[data-event]').forEach(button=> button.addEventListener('click', ()=>{
+        const event=events[button.dataset.event]; if(!event) return;
+        document.querySelectorAll('[data-event]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+        set('[data-p-tag]',event.pace.tag);set('[data-p-title]',event.pace.title);set('[data-p-desc]',event.pace.desc);set('[data-p-foot]',event.pace.foot);
+        set('[data-b-tag]',event.bits.tag);set('[data-b-title]',event.bits.title);set('[data-b-desc]',event.bits.desc);set('[data-b-foot]',event.bits.foot);
+      }));
+      const toast=document.getElementById('toast');let toastTimer;
+      document.querySelectorAll('[data-color]').forEach(button=> button.addEventListener('click', async()=>{
+        const color=button.dataset.color;
+        try { if(navigator.clipboard?.writeText) await navigator.clipboard.writeText(color); else { const input=document.createElement('textarea');input.value=color;document.body.append(input);input.select();document.execCommand('copy');input.remove(); } toast.textContent='Copied '+color; }
+        catch(e) { toast.textContent='Color: '+color; }
+        toast.classList.add('active');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('active'),1700);
+      }));
+    })();
+  </script>
+</body>
+</html>
